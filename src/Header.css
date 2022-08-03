@@ -1,0 +1,13 @@
+.list {
+  background-color: #152238;
+  padding: 5px;
+}
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 30px;
+  align-items: center;
+  color: azure;
+  /* margin-left: px; */
+  margin-right: 600px;
+}
