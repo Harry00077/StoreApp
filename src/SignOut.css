@@ -1,0 +1,17 @@
+.btn {
+  display: block;
+  margin-top: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  height: 60px;
+  background-color: #27a7b9;
+  color: black;
+  border-color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background-color: #7aebfa;
+}

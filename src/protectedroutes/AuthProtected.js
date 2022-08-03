@@ -1,15 +1,14 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 import { useCreateAuthStateContext } from "../authprovider/AuthProvider";
-// import useCreateAuthStateContext from "../components/Home";
 
-const SignInRoute = ({ children }) => {
+const AuthProtected = ({ children }) => {
   const userAuth = useCreateAuthStateContext();
 
-  if (userAuth) {
-    return <Navigate to="/" />;
+  if (!userAuth) {
+    return <Navigate to="/signin" />;
   }
   return children;
 };
 
-export default SignInRoute;
+export default AuthProtected;

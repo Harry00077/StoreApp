@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCreateAuthDispatchContext } from "../authprovider/AuthProvider";
+import "../SignIn.css";
 
 function SignIn() {
   const [userName, setUserName] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const { handleAuthChange } = useCreateAuthDispatchContext();
 
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
   const handleOnClick = () => {
-    if (userName !== "admin" && userPassword !== "admin123") {
+    if (userName !== "admin" || userPassword !== "admin123") {
       return;
     }
-    handleAuthChange(false);
-    Navigate("/cart");
+    handleAuthChange(true);
+    navigate("/cart");
   };
   return (
     <div>
@@ -30,7 +31,7 @@ function SignIn() {
         }}
       />
 
-      <button onClick={handleOnClick}>Dabao</button>
+      <button onClick={handleOnClick}>Sign In</button>
     </div>
   );
 }

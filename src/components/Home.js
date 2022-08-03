@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import "../Home.css";
+
 function Home() {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/cart");
+  };
   const [data, setData] = useState();
 
   const fetchData = async () => {
@@ -19,14 +26,13 @@ function Home() {
         {data &&
           data.map((n, id) => {
             return (
-              <h1 className="data" key={id}>
+              <div key={id}>
                 <img src={n.image} alt=" not found" />
-                <div className="card">
-                  <h4>{n.title}</h4>
-                  <p>{n.category}</p>
-                  <h4>{n.price}</h4>
-                </div>
-              </h1>
+                <h6>{n.title}</h6>
+                <h4>{n.category}</h4>
+                <h4>{n.price}</h4>
+                <button onClick={handleClick}>Add to Cart</button>
+              </div>
             );
           })}
       </div>
