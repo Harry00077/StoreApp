@@ -31,7 +31,9 @@ function Home() {
                 <h6>{n.title}</h6>
                 <h4>{n.category}</h4>
                 <h4>{n.price}</h4>
-                <button onClick={handleClick}>Add to Cart</button>
+                <button className="bttn" onClick={handleClick}>
+                  Add to Cart
+                </button>
               </div>
             );
           })}
